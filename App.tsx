@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [selectedGuide, setSelectedGuide] = useState<Guide | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const t = UI_STRINGS[lang];
+  const t = (UI_STRINGS as any)[lang];
   const isRtl = lang === 'he' || lang === 'ar';
 
   useEffect(() => {
@@ -121,15 +121,15 @@ const App: React.FC = () => {
             <div className="w-24 h-24 bg-gray-100 dark:bg-[#3d3d3d] rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-green-600 transition-all shadow-xl">
               <Zap className="text-green-600 group-hover:text-black transition-colors" size={48} />
             </div>
-            <h3 className="text-3xl font-black mb-6">{isRtl ? 'אפקטים מיוחדים' : 'Special Effects'}</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{isRtl ? 'יצירת פיצוצים אסתטיים ותאורה דינמית.' : 'Creating aesthetic explosions and dynamic lighting.'}</p>
+            <h3 className="text-3xl font-black mb-6">{t.featuresTitle2}</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{t.featuresDesc2}</p>
           </div>
           <div className="text-center group p-8 rounded-3xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all">
             <div className="w-24 h-24 bg-gray-100 dark:bg-[#3d3d3d] rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-blue-600 transition-all shadow-xl">
               <ShieldAlert className="text-blue-600 group-hover:text-black transition-colors" size={48} />
             </div>
-            <h3 className="text-3xl font-black mb-6">{isRtl ? 'תכנון אדריכלי' : 'Architectural Planning'}</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{isRtl ? 'הבנת פרופורציות ושילובי צבעים.' : 'Understanding proportions and color combinations.'}</p>
+            <h3 className="text-3xl font-black mb-6">{t.featuresTitle3}</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{t.featuresDesc3}</p>
           </div>
         </div>
       </section>
@@ -184,7 +184,7 @@ const App: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-6">
-              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">Send Feedback</h3>
+              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">{t.feedbackBtn}</h3>
               <div className="flex flex-col gap-4 text-gray-700 dark:text-gray-300">
                 <a href="mailto:goldnoamai@gmail.com" className={`group flex items-center justify-center ${isRtl ? 'md:justify-start' : 'md:justify-start'} gap-3 hover:text-yellow-600 transition-colors font-bold text-lg`}>
                   <div className="p-3 bg-yellow-600/10 group-hover:bg-yellow-600 group-hover:text-black rounded-lg transition-all">
@@ -196,10 +196,10 @@ const App: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-6">
-              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">{isRtl ? 'קישורים מהירים' : 'Quick Links'}</h3>
+              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">{t.quickLinks}</h3>
               <nav className="flex flex-col gap-4 text-lg font-bold">
-                <a href="#" className="hover:text-yellow-600 transition-colors">{isRtl ? 'דף הבית' : 'Home'}</a>
-                <a href="#guides" className="hover:text-yellow-600 transition-colors">{t.guidesTitle}</a>
+                <a href="#" className="hover:text-yellow-600 transition-colors">{t.home}</a>
+                <a href="#guides" className="hover:text-yellow-600 transition-colors">{t.guides}</a>
               </nav>
             </div>
           </div>
@@ -207,7 +207,7 @@ const App: React.FC = () => {
           <div className="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 text-center text-gray-500 font-medium">
              <div className="flex flex-col items-center gap-2">
                <p className="text-lg font-bold text-gray-800 dark:text-gray-100">(C) Noam Gold AI 2026</p>
-               <p>{isRtl ? 'מיוצר באהבה עבור קהילת המיינקראפט.' : 'Made with love for the Minecraft community.'}</p>
+               <p>{t.madeWithLove}</p>
              </div>
           </div>
         </div>

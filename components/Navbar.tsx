@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { Home, Hammer, Sparkles, Sun, Moon, Menu, ChevronDown, Milestone, Lightbulb, Flame, Leaf, Globe, Zap, Shield, Image as ImageIcon } from 'lucide-react';
-// Correcting imports: LanguageCode remains in types, while UI_STRINGS is imported from constants.
 import { LanguageCode } from '../types';
 import { UI_STRINGS } from '../constants';
 
@@ -65,13 +63,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme, toggleSidebar, a
         <div className="hidden md:flex gap-6 font-black text-lg items-center text-gray-800 dark:text-white">
           <a href="#" className="flex items-center gap-2 hover:text-yellow-600 transition-all hover:scale-105 group">
             <Home size={22} className="group-hover:-translate-y-1 transition-transform" />
-            {isRtl ? 'ראשי' : (lang === 'ar' ? 'الرئيسية' : 'Home')}
+            {t.home}
           </a>
           
           <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
             <button className={`flex items-center gap-2 transition-all px-4 py-2 rounded-xl group ${activeCategory !== 'all' ? 'bg-yellow-600 text-black shadow-lg' : 'hover:text-yellow-600'}`}>
               <Hammer size={22} className="group-hover:rotate-12 transition-transform" />
-              {activeCategory === 'all' ? (isRtl ? 'מדריכים' : 'Guides') : CATEGORIES.find(c => c.id === activeCategory)?.label}
+              {activeCategory === 'all' ? t.guides : CATEGORIES.find(c => c.id === activeCategory)?.label}
               <ChevronDown size={18} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`} />
             </button>
             <div className={`absolute top-full ${isRtl ? 'right-0' : 'left-0'} mt-2 w-64 bg-white dark:bg-[#333] rounded-2xl shadow-2xl border-2 border-yellow-600 overflow-hidden transition-all duration-300 origin-top ${isDropdownOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}`}>
@@ -79,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme, toggleSidebar, a
                 <button
                   key={cat.id}
                   onClick={() => { setActiveCategory(cat.id); setIsDropdownOpen(false); }}
-                  className={`w-full text-right px-6 py-4 flex items-center gap-4 hover:bg-yellow-600 hover:text-black transition-colors font-bold ${activeCategory === cat.id ? 'bg-yellow-600/20 text-yellow-600' : ''}`}
+                  className={`w-full ${isRtl ? 'text-right' : 'text-left'} px-6 py-4 flex items-center gap-4 hover:bg-yellow-600 hover:text-black transition-colors font-bold ${activeCategory === cat.id ? 'bg-yellow-600/20 text-yellow-600' : ''}`}
                 >
                   <cat.icon size={20} />
                   {cat.label}
@@ -98,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme, toggleSidebar, a
                 <button
                   key={l.code}
                   onClick={() => { setLang(l.code as LanguageCode); setIsLangOpen(false); }}
-                  className={`w-full text-right px-6 py-3 flex items-center justify-between hover:bg-yellow-600 hover:text-black transition-colors font-bold ${lang === l.code ? 'bg-yellow-600/20 text-yellow-600' : ''}`}
+                  className={`w-full ${isRtl ? 'text-right' : 'text-left'} px-6 py-3 flex items-center justify-between hover:bg-yellow-600 hover:text-black transition-colors font-bold ${lang === l.code ? 'bg-yellow-600/20 text-yellow-600' : ''}`}
                 >
                   <span>{l.label}</span>
                   <span>{l.flag}</span>
