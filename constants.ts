@@ -7,7 +7,7 @@ export const GUIDES: Guide[] = [
     category: 'architecture',
     title: 'עיצוב בתי עץ מודרניים',
     description: 'איך לשלב עץ כהה עם חלונות זכוכית למראה יוקרתי.',
-    imageUrl: 'https://picsum.photos/seed/mc-house/800/600',
+    imageUrl: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&q=80&w=800',
     steps: [
       'הנחת יסודות מעץ אלון כהה',
       'שימוש בלוחות זכוכית (Panes) במקום בלוקים למראה דק',
@@ -20,7 +20,7 @@ export const GUIDES: Guide[] = [
     category: 'bridge',
     title: 'בניית גשר תלוי אסתטי',
     description: 'שילוב גדרות וחבלים למראה גשר הרפתקאות.',
-    imageUrl: 'https://picsum.photos/seed/mc-bridge/800/600',
+    imageUrl: 'https://images.unsplash.com/photo-1614854262318-831d8209dcbb?auto=format&fit=crop&q=80&w=800',
     steps: [
       'שימוש במדריגות אבן ליצירת קשת',
       'תליית גדרות (Fences) מהצדדים',
@@ -33,7 +33,7 @@ export const GUIDES: Guide[] = [
     category: 'tnt',
     title: 'אמנות הפיצוץ המבוקר',
     description: 'איך ליצור מכתשים יפים ומבנים הרוסים בצורה אמינה.',
-    imageUrl: 'https://picsum.photos/seed/mc-tnt/800/600',
+    imageUrl: 'https://images.unsplash.com/photo-1632342410223-e4d0d5d59f77?auto=format&fit=crop&q=80&w=800',
     steps: [
       'פיזור אקראי של TNT בתוך המבנה',
       'שימוש בבלוקים חצי הרוסים (Mossy Stone, Cracked Bricks)',
@@ -46,7 +46,7 @@ export const GUIDES: Guide[] = [
     category: 'interior',
     title: 'חלונות ומסגרות יצירתיים',
     description: 'שיפור מראה החלון בעזרת מלכודות (Trapdoors).',
-    imageUrl: 'https://picsum.photos/seed/mc-window/800/600',
+    imageUrl: 'https://images.unsplash.com/photo-1635323214304-63304561879c?auto=format&fit=crop&q=80&w=800',
     steps: [
       'שימוש ב-Trapdoors כתריסים חיצוניים',
       'הצבת עציצים על אדן החלון מבחוץ',
