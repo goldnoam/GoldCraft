@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -7,11 +6,11 @@ import { GUIDES } from './constants';
 import { ChevronDown, Sparkles, Hammer, ShieldAlert, Zap, Mail } from 'lucide-react';
 
 const App: React.FC = () => {
+  // Dark mode by default
   const [darkMode, setDarkMode] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
-    // Sync with HTML class
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -73,7 +72,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats/Features Section */}
+      {/* Features Section */}
       <section className="py-20 px-4 bg-white dark:bg-[#262626]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="text-center group">
@@ -115,10 +114,15 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* AdSense Placement Placeholder */}
+      {/* AdSense Placement */}
       <section className="max-w-7xl mx-auto mb-12 p-4">
-        <div className="bg-gray-200 dark:bg-gray-800 h-24 flex items-center justify-center rounded border-2 border-dashed border-gray-400">
-           <span className="text-gray-500">Ad Placement Placeholder</span>
+        <div className="bg-gray-200 dark:bg-gray-800 h-24 flex items-center justify-center rounded border-2 border-dashed border-gray-400 overflow-hidden">
+           <ins className="adsbygoogle"
+                style={{display:'block', width:'100%', height:'90px'}}
+                data-ad-client="ca-pub-0000000000000000"
+                data-ad-slot="0000000000"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
         </div>
       </section>
 
@@ -134,7 +138,7 @@ const App: React.FC = () => {
           
           <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-400">
             <p className="text-lg font-bold">(C) Noam Gold AI 2026</p>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2">
               <span>Send Feedback:</span>
               <a href="mailto:goldnoamai@gmail.com" className="text-yellow-600 hover:underline font-bold flex items-center gap-1">
                 <Mail size={16} />
