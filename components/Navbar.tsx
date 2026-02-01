@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Hammer, Sparkles, Sun, Moon, Menu, ChevronDown, Layout, Bridge, Lamp, Flame, Trees } from 'lucide-react';
+import { Home, Hammer, Sparkles, Sun, Moon, Menu, ChevronDown, Milestone, Lightbulb, Flame, Leaf } from 'lucide-react';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -11,11 +11,11 @@ interface NavbarProps {
 
 const CATEGORIES = [
   { id: 'all', label: 'הכל', icon: Hammer },
-  { id: 'architecture', label: 'עיצוב מבנים', icon: Layout },
-  { id: 'bridge', label: 'גשרים', icon: Bridge },
-  { id: 'interior', label: 'עיצוב פנים', icon: Lamp },
+  { id: 'architecture', label: 'עיצוב מבנים', icon: Home },
+  { id: 'bridge', label: 'גשרים', icon: Milestone },
+  { id: 'interior', label: 'עיצוב פנים', icon: Lightbulb },
   { id: 'tnt', label: 'פיצוצים', icon: Flame },
-  { id: 'environment', label: 'נוף וסביבה', icon: Trees },
+  { id: 'environment', label: 'נוף וסביבה', icon: Leaf },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme, toggleSidebar, activeCategory, setActiveCategory }) => {

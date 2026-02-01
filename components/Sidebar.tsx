@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Home, Hammer, Mail, Info, Sun, Moon, ChevronDown, Layout, Bridge, Lamp, Flame, Trees } from 'lucide-react';
+import { X, Home, Hammer, Mail, Info, Sun, Moon, ChevronDown, Milestone, Lightbulb, Flame, Leaf } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -12,11 +12,11 @@ interface SidebarProps {
 
 const CATEGORIES = [
   { id: 'all', label: 'הכל', icon: Hammer },
-  { id: 'architecture', label: 'עיצוב מבנים', icon: Layout },
-  { id: 'bridge', label: 'גשרים', icon: Bridge },
-  { id: 'interior', label: 'עיצוב פנים', icon: Lamp },
+  { id: 'architecture', label: 'עיצוב מבנים', icon: Home },
+  { id: 'bridge', label: 'גשרים', icon: Milestone },
+  { id: 'interior', label: 'עיצוב פנים', icon: Lightbulb },
   { id: 'tnt', label: 'פיצוצים', icon: Flame },
-  { id: 'environment', label: 'נוף וסביבה', icon: Trees },
+  { id: 'environment', label: 'נוף וסביבה', icon: Leaf },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, darkMode, toggleTheme, activeCategory, setActiveCategory }) => {
