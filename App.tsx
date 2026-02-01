@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -8,7 +9,7 @@ import { Guide } from './types';
 import { ChevronDown, Sparkles, Hammer, ShieldAlert, Zap, Mail, RotateCcw } from 'lucide-react';
 
 const App: React.FC = () => {
-  // Dark mode by default
+  // Dark mode by default as requested
   const [darkMode, setDarkMode] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedGuide, setSelectedGuide] = useState<Guide | null>(null);
@@ -189,7 +190,7 @@ const App: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-6">
-              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">צור קשר ומשוב</h3>
+              <h3 className="text-2xl font-black text-yellow-600 underline decoration-4 underline-offset-8">Send Feedback</h3>
               <div className="flex flex-col gap-4 text-gray-700 dark:text-gray-300">
                 <a href="mailto:goldnoamai@gmail.com" className="group flex items-center justify-center md:justify-start gap-3 hover:text-yellow-600 transition-colors font-bold text-lg">
                   <div className="p-3 bg-yellow-600/10 group-hover:bg-yellow-600 group-hover:text-black rounded-lg transition-all">
@@ -197,7 +198,6 @@ const App: React.FC = () => {
                   </div>
                   goldnoamai@gmail.com
                 </a>
-                <p className="text-lg font-bold opacity-80">(C) Noam Gold AI 2026</p>
               </div>
             </div>
 
@@ -213,7 +213,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 text-center text-gray-500 font-medium">
-             מיוצר באהבה עבור קהילת המיינקראפט הישראלית. כל הזכויות שמורות.
+             <div className="flex flex-col items-center gap-2">
+               <p className="text-lg font-bold text-gray-800 dark:text-gray-100">(C) Noam Gold AI 2026</p>
+               <p>מיוצר באהבה עבור קהילת המיינקראפט הישראלית. כל הזכויות שמורות.</p>
+             </div>
           </div>
         </div>
       </footer>

@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { X, Home, Hammer, Mail, Info, Sun, Moon, ChevronDown, Milestone, Lightbulb, Flame, Leaf } from 'lucide-react';
+import { X, Home, Hammer, Mail, Info, Sun, Moon, ChevronDown, Milestone, Lightbulb, Flame, Leaf, Sparkles } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -46,14 +47,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, darkMode, toggleThem
         <div className="p-6 h-full flex flex-col overflow-y-auto">
           <div className="flex justify-between items-center mb-10">
             <h2 className="text-2xl font-black minecraft-gold">GoldCraft</h2>
-            <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-800 dark:text-white">
-              <X size={24} />
+            <button 
+              onClick={onClose} 
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-800 dark:text-white group transition-colors"
+            >
+              <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
             </button>
           </div>
           
           <nav className="flex flex-col gap-4 font-bold text-lg text-gray-800 dark:text-white">
-            <a href="#" onClick={onClose} className="flex items-center gap-4 p-2 hover:bg-yellow-600/10 rounded-xl transition-all">
-              <Home size={22} className="text-yellow-600" />
+            <a href="#" onClick={onClose} className="flex items-center gap-4 p-3 hover:bg-yellow-600/10 rounded-xl transition-all group">
+              <Home size={22} className="text-yellow-600 group-hover:scale-110 transition-transform" />
               ראשי
             </a>
             
@@ -61,22 +65,23 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, darkMode, toggleThem
             <div className="flex flex-col">
               <button 
                 onClick={() => setIsGuidesOpen(!isGuidesOpen)}
-                className={`flex items-center justify-between gap-4 p-2 hover:bg-yellow-600/10 rounded-xl transition-all w-full text-right ${activeCategory !== 'all' ? 'text-yellow-600' : ''}`}
+                className={`flex items-center justify-between gap-4 p-3 hover:bg-yellow-600/10 rounded-xl transition-all w-full text-right group ${activeCategory !== 'all' ? 'text-yellow-600' : ''}`}
               >
                 <div className="flex items-center gap-4">
-                  <Hammer size={22} className="text-yellow-600" />
+                  <Hammer size={22} className="text-yellow-600 group-hover:rotate-12 transition-transform" />
                   מדריכים
                 </div>
-                <ChevronDown size={18} className={`transition-transform ${isGuidesOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown size={18} className={`transition-transform duration-300 ${isGuidesOpen ? 'rotate-180' : 'rotate-0'}`} />
               </button>
               
-              <div className={`flex flex-col gap-2 mt-2 pr-10 overflow-hidden transition-all duration-300 ${isGuidesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className={`flex flex-col gap-2 mt-2 pr-10 overflow-hidden transition-all duration-300 ${isGuidesOpen ? 'max-h-[500px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4 pointer-events-none'}`}>
                 {CATEGORIES.map(cat => (
                   <button
                     key={cat.id}
                     onClick={() => handleCategorySelect(cat.id)}
-                    className={`text-right py-2 px-4 rounded-lg text-base hover:bg-yellow-600 hover:text-black transition-all ${activeCategory === cat.id ? 'bg-yellow-600 text-black' : 'opacity-70'}`}
+                    className={`text-right py-2 px-4 rounded-lg text-base hover:bg-yellow-600 hover:text-black transition-all group/item flex items-center gap-3 ${activeCategory === cat.id ? 'bg-yellow-600 text-black' : 'opacity-70'}`}
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-600 group-hover/item:scale-150 transition-transform"></span>
                     {cat.label}
                   </button>
                 ))}
@@ -87,25 +92,32 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, darkMode, toggleThem
               onClick={() => {
                 toggleTheme();
               }} 
-              className="flex items-center gap-4 p-2 hover:bg-yellow-600/10 rounded-xl transition-all text-right"
+              className="flex items-center gap-4 p-3 hover:bg-yellow-600/10 rounded-xl transition-all text-right group"
             >
-              {darkMode ? <Sun size={22} className="text-yellow-400" /> : <Moon size={22} className="text-gray-400" />}
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                {darkMode ? (
+                  <Sun size={22} className="text-yellow-400 group-hover:rotate-90 transition-transform duration-500" />
+                ) : (
+                  <Moon size={22} className="text-gray-400 group-hover:-rotate-12 transition-transform duration-500" />
+                )}
+              </div>
               {darkMode ? "מצב יום" : "מצב לילה"}
             </button>
             <div className="h-px bg-gray-200 dark:bg-gray-800 my-2" />
-            <a href="mailto:goldnoamai@gmail.com" className="flex items-center gap-4 p-2 hover:bg-yellow-600/10 rounded-xl transition-all">
-              <Mail size={22} className="text-yellow-600" />
+            <a href="mailto:goldnoamai@gmail.com" className="flex items-center gap-4 p-3 hover:bg-yellow-600/10 rounded-xl transition-all group">
+              <Mail size={22} className="text-yellow-600 group-hover:rotate-12 transition-transform" />
               צור קשר
             </a>
-            <a href="#" className="flex items-center gap-4 p-2 hover:bg-yellow-600/10 rounded-xl transition-all">
-              <Info size={22} className="text-yellow-600" />
+            <a href="#" className="flex items-center gap-4 p-3 hover:bg-yellow-600/10 rounded-xl transition-all group">
+              <Info size={22} className="text-yellow-600 group-hover:scale-110 transition-transform" />
               אודות
             </a>
           </nav>
 
           <div className="mt-auto pt-10 pb-6">
-            <button className="w-full bg-green-600 text-white py-4 rounded-xl font-black shadow-[0_4px_0_0_#15803d] active:translate-y-1 active:shadow-none transition-all text-xl">
+            <button className="w-full bg-green-600 text-white py-4 rounded-xl font-black shadow-[0_4px_0_0_#15803d] active:translate-y-1 active:shadow-none transition-all text-xl hover:bg-green-500 group flex items-center justify-center gap-3">
               התחבר עכשיו
+              <Sparkles size={20} className="group-hover:animate-pulse" />
             </button>
           </div>
         </div>

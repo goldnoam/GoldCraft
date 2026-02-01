@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Guide } from '../types';
 import { X, CheckCircle2, MapPin, Copy, Check, Image as ImageIcon } from 'lucide-react';
@@ -128,10 +129,9 @@ const GuideModal: React.FC<GuideModalProps> = ({ guide, onClose }) => {
             <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-4 text-sm text-gray-500">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white dark:border-[#2d2d2d] flex items-center justify-center text-[10px] text-white font-bold">NG</div>
-                  <div className="w-8 h-8 rounded-full bg-green-500 border-2 border-white dark:border-[#2d2d2d] flex items-center justify-center text-[10px] text-white font-bold">AI</div>
+                  <div className="w-8 h-8 rounded-full bg-yellow-600 border-2 border-white dark:border-[#2d2d2d] flex items-center justify-center text-[10px] text-black font-bold">GC</div>
                 </div>
-                <span>נכתב על ידי צוות המומחים של GoldCraft - יועצי הבנייה הדיגיטליים שלך.</span>
+                <span>נכתב על ידי צוות המומחים של GoldCraft - יועצי הבנייה המקצועיים שלך.</span>
               </div>
             </div>
           </div>
