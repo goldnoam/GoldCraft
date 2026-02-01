@@ -7,6 +7,10 @@ export const GUIDES: Guide[] = [
     title: 'עיצוב בתי עץ מודרניים',
     description: 'איך לשלב עץ כהה עם חלונות זכוכית למראה יוקרתי ומזמין המשתלב בטבע.',
     imageUrl: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1607627000458-210e8d261178?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'הנחת יסודות מעץ אלון כהה (Dark Oak) ליצירת קונטרסט חזק.',
       'שימוש בלוחות זכוכית (Panes) במקום בלוקים מלאים למתן עומק וקלילות.',
@@ -22,6 +26,10 @@ export const GUIDES: Guide[] = [
     title: 'בניית גשר תלוי אסתטי',
     description: 'שילוב גדרות, חבלים וטכניקות עומק למראה גשר הרפתקאות מרשים מעל קניון.',
     imageUrl: 'https://images.unsplash.com/photo-1614854262318-831d8209dcbb?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581291417067-285048fc850d?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'שימוש במדריגות אבן (Stone Stairs) הפוכות ליצירת קשת תמיכה.',
       'תליית גדרות (Fences) מהצדדים שמשמשות כמעקות בטיחות.',
@@ -37,6 +45,10 @@ export const GUIDES: Guide[] = [
     title: 'אמנות הפיצוץ המבוקר',
     description: 'איך ליצור מכתשים אסתטיים ומבנים הרוסים בצורה אמינה שמספרת סיפור.',
     imageUrl: 'https://images.unsplash.com/photo-1632342410223-e4d0d5d59f77?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1596495573175-975a46e00293?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'פיזור אקראי ולא צפוף של TNT בתוך ומחוץ למבנה הקיים.',
       'החלפת בלוקים שלמים בבלוקים הרוסים כמו Mossy Stone או Cracked Bricks.',
@@ -52,6 +64,10 @@ export const GUIDES: Guide[] = [
     title: 'חלונות ומסגרות יצירתיים',
     description: 'שיפור משמעותי של מראה הבית בעזרת טכניקות חלונות מתקדמות ומסגרות עמוקות.',
     imageUrl: 'https://images.unsplash.com/photo-1635323214304-63304561879c?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1513512147376-c0da31844a50?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1536376074432-bf12177d4f93?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'שימוש ב-Trapdoors כתריסים חיצוניים שניתן לפתוח ולסגור.',
       'הצבת עציצים (Flower Pots) על אדן החלון החיצוני המורכב מ-Slabs.',
@@ -67,6 +83,10 @@ export const GUIDES: Guide[] = [
     title: 'עיצוב גינה קסומה',
     description: 'הפיכת השטח מסביב לבית לגן עדן פורח עם שבילים וצמחייה עשירה.',
     imageUrl: 'https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1501004318641-72e542844e27?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'יצירת שבילים לא ישרים בעזרת Dirt Path ו-Coarse Dirt.',
       'פיזור אקראי של Buttons (אבנים קטנות) לאורך השביל.',
@@ -82,6 +102,10 @@ export const GUIDES: Guide[] = [
     title: 'מגדל שמירה ימי-ביניימי',
     description: 'בניית מגדל אבן מרשים עם פרטים אדריכליים מתקופת ימי הביניים.',
     imageUrl: 'https://images.unsplash.com/photo-1599427303058-f06cb9e980ee?auto=format&fit=crop&q=80&w=800',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1524397057410-1e775ed476f3?auto=format&fit=crop&q=80&w=800'
+    ],
     steps: [
       'בניית בסיס רחב מאבן (Stone Bricks) שהולך ונהיה צר כלפי מעלה.',
       'הוספת "חלונות ירי" צרים בעזרת Stairs הפוכות זו מול זו.',

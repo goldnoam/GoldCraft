@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Guide } from '../types';
-import { ChevronLeft, Info, Copy, Check, ChevronUp } from 'lucide-react';
+import { ChevronLeft, Info, Copy, Check, ChevronUp, FileText } from 'lucide-react';
 
 interface GuideCardProps {
   guide: Guide;
@@ -12,14 +12,16 @@ const GuideCard: React.FC<GuideCardProps> = ({ guide, onSelect }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleCopy = async (e: React.MouseEvent) => {
+  const handleCopyFullGuide = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      await navigator.clipboard.writeText(guide.description);
+      const stepsText = guide.steps.map((step, index) => `${index + 1}. ${step}`).join('\n');
+      const fullContent = `מדריך GoldCraft: ${guide.title}\n\nתיאור: ${guide.description}\n\nצעדים:\n${stepsText}`;
+      await navigator.clipboard.writeText(fullContent);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error('Failed to copy content: ', err);
     }
   };
 
@@ -54,12 +56,12 @@ const GuideCard: React.FC<GuideCardProps> = ({ guide, onSelect }) => {
         </div>
         
         <button 
-          onClick={handleCopy}
-          className="absolute bottom-2 left-2 p-2 bg-black/60 hover:bg-black/90 rounded-lg text-white transition-all flex items-center gap-1 text-xs z-10 border border-white/20"
-          title="העתק תיאור"
+          onClick={handleCopyFullGuide}
+          className="absolute bottom-2 left-2 p-2 bg-black/60 hover:bg-black/90 rounded-lg text-white transition-all flex items-center gap-2 text-xs z-10 border border-white/20"
+          title="העתק מדריך מלא"
         >
-          {isCopied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
-          {isCopied && <span className="font-bold">הועתק!</span>}
+          {isCopied ? <Check size={14} className="text-green-400" /> : <FileText size={14} />}
+          <span className="font-bold">{isCopied ? 'הועתק!' : 'העתק מדריך'}</span>
         </button>
       </div>
       

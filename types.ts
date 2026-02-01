@@ -1,4 +1,3 @@
-
 export interface Guide {
   id: string;
   title: string;
@@ -6,6 +5,7 @@ export interface Guide {
   description: string;
   steps: string[];
   imageUrl: string;
+  galleryImages?: string[];
 }
 
 export interface ChatMessage {
