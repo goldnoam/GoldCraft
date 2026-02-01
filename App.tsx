@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import GuideCard from './components/GuideCard';
 import { GUIDES } from './constants';
-import { ChevronDown, Sparkles, Hammer, ShieldAlert, Zap, Mail } from 'lucide-react';
+import { ChevronDown, Sparkles, Hammer, ShieldAlert, Zap, Mail, RotateCcw } from 'lucide-react';
 
 const App: React.FC = () => {
   // Dark mode by default
@@ -20,6 +20,7 @@ const App: React.FC = () => {
 
   const toggleTheme = () => setDarkMode(!darkMode);
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const resetPage = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-gray-50 dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 selection:bg-yellow-500 selection:text-black">
@@ -63,7 +64,7 @@ const App: React.FC = () => {
               href="mailto:goldnoamai@gmail.com"
               className="bg-yellow-600 hover:bg-yellow-500 text-black text-xl px-10 py-4 rounded-xl font-bold shadow-[0_6px_0_0_#b45309] hover:translate-y-[-2px] active:translate-y-1 active:shadow-none transition-all"
             >
-              צור קשר
+              שלח משוב
             </a>
           </div>
           <div className="mt-16 animate-pulse">
@@ -139,8 +140,8 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-400">
             <p className="text-lg font-bold">(C) Noam Gold AI 2026</p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2">
-              <span>Send Feedback:</span>
-              <a href="mailto:goldnoamai@gmail.com" className="text-yellow-600 hover:underline font-bold flex items-center gap-1">
+              <span className="font-bold">Send Feedback:</span>
+              <a href="mailto:goldnoamai@gmail.com" className="text-yellow-600 hover:text-yellow-500 font-bold flex items-center gap-1 transition-colors">
                 <Mail size={16} />
                 goldnoamai@gmail.com
               </a>
@@ -154,6 +155,17 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating Controls */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <button 
+          onClick={resetPage}
+          className="p-4 bg-yellow-600 text-black rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all"
+          title="חזור למעלה"
+        >
+          <RotateCcw size={24} />
+        </button>
+      </div>
     </div>
   );
 };
